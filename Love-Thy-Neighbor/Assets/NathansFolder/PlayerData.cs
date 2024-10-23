@@ -7,5 +7,6 @@ public class PlayerData : ScriptableObject
     [field: SerializeField, Range(0,100)] public float moveSpeed;
     [field: SerializeField, Range(0,50)] public float lookSens;
     [field: SerializeField, Range(0,1000)] public int maxHealth;
+    [SerializeField] public float clampRotation;
 
 }
