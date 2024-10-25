@@ -12,6 +12,8 @@ public class PlayerInputController : MonoBehaviour
         playerControls.Movement.WASD.performed += (var) => playerController.HandleMovement(var.ReadValue<Vector2>());
         playerControls.Movement.WASD.canceled += (var) => playerController.CancelMove();
         playerControls.Combat.ShootUse.performed += (var) => playerController.HandleShoot();
+        playerControls.Combat.ShootUse.canceled += (var) => playerController.StopShoot();
+        playerControls.Combat.Reload.performed += (var) => playerController.Reload();
         playerControls.Combat.Aim.performed += (var) => playerController.HandleAim();
         playerControls.Look.Look.performed += (var) => playerController.HandleMouse(var.ReadValue<Vector2>());
         playerControls.Enable();

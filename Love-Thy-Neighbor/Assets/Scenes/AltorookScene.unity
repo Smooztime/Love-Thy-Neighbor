@@ -1128,10 +1128,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2e4bc35fb8daf4999ddc2bea0095b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inAccuracy: 0
+  <InAccuracy>k__BackingField: 0
+  <Kick>k__BackingField: 0
+  AmmoInGun: 0
+  mouseIsDown: 0
   bulletMark: {fileID: 4671571655390466252, guid: 565cd75fc2570aa4db33f1e57683fb97,
     type: 3}
   pistolData: {fileID: 11400000, guid: 0d10f8a63909f6d45a8dd875d2a920ba, type: 2}
+  playerController: {fileID: 2037855237}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

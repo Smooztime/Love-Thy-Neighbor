@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403acf0dfe2ab6848ba3cf260f2c92c0, type: 3}
   m_Name: PistolData
   m_EditorClassIdentifier: 
-  damage: 21.6
-  attackSpeed: 0.2
-  perShotRecoil: 0.007
-  accuracyRecoverySpeed: 0.01
-  maxInaccuracy: 0.015
+  <Damage>k__BackingField: 15
+  <AttackSpeed>k__BackingField: 0.1
+  <PerShotRecoil>k__BackingField: 0.007
+  <AccuracyRecoverySpeed>k__BackingField: 0.007
+  <MaxInaccuracy>k__BackingField: 0.02
+  <PerShotKick>k__BackingField: 5
+  <MaxKick>k__BackingField: 30
+  <ReloadSpeed>k__BackingField: 1
+  <KickRecoverySpeed>k__BackingField: 0.5
+  <MaxAmmo>k__BackingField: 30
+  <ShotgunPellets>k__BackingField: 14
+  <ShotgunSpread>k__BackingField: 0.08
+  <ShotGunMode>k__BackingField: 1
+  <FullAutoMode>k__BackingField: 1

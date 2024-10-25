@@ -17,12 +17,15 @@ public class PlayerController : MonoBehaviour
     float forwardBackInput = 0;
     float upDownRotation = 0;
     float leftRightRotation = 0;
+    float temporaryKickRotation = 0;
     // Start is called before the first frame update
     void Start()
     {
         movementSpeed = playerData.moveSpeed;
         lookSensitivity = playerData.lookSens;
         clampRotation = playerData.clampRotation;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     private void FixedUpdate()
     {
@@ -61,14 +64,27 @@ public class PlayerController : MonoBehaviour
     {
         upDownRotation += -input.y * lookSensitivity;
         leftRightRotation += input.x;
-        upDownRotation = Mathf.Clamp(upDownRotation, -60, 60);
+        upDownRotation = Mathf.Clamp(upDownRotation, -60 + temporaryKickRotation, 60 + temporaryKickRotation);
         playerTransform.eulerAngles = new Vector3(playerTransform.rotation.x,leftRightRotation * lookSensitivity, playerTransform.rotation.z);
-        cameraTransform.localRotation = Quaternion.Euler(new Vector3(upDownRotation,0,0));
     }
     public void HandleShoot()
     {
         Debug.Log("Shooting");
+        pistol.mouseIsDown = true;
         pistol.Shoot();
+        pistol.ShotGunFire();
+    }
+    public void StopShoot()
+    {
+        pistol.mouseIsDown = false;
+    }
+    public void Reload()
+    {
+        pistol.Reload();
+    }
+    public void GunKickUp(float angleToMoveUp)
+    {
+        temporaryKickRotation = angleToMoveUp;
     }
     public void HandleAim()
     {
@@ -78,6 +94,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        cameraTransform.localRotation = Quaternion.Euler(new Vector3(Mathf.Clamp(upDownRotation - temporaryKickRotation, -60,60), 0, 0));
+        if (temporaryKickRotation > 0)
+        {
+            temporaryKickRotation = pistol.Kick;
+        }
+        else
+        {
+            temporaryKickRotation = 0;
+        }
     }
 }
