@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 449b26eec26a24246943c7606340ef43, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: 403acf0dfe2ab6848ba3cf260f2c92c0, type: 3}
+  m_Name: PistolData
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  lookSens: 0.13
-  maxHealth: 1000
-  clampRotation: 70
+  damage: 21.6
+  attackSpeed: 0.2
+  perShotRecoil: 0.007
+  accuracyRecoverySpeed: 0.01
+  maxInaccuracy: 0.015

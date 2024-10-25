@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 449b26eec26a24246943c7606340ef43, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: 76104512a3bf35f4fab0875205be6a02, type: 3}
+  m_Name: FlowerManData
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  lookSens: 0.13
-  maxHealth: 1000
-  clampRotation: 70
+  health: 100
+  speed: 10
+  damage: 10
