@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3814613889735457255}
   m_Layer: 0
-  m_Name: WeaponPos
+  m_Name: HeavyWeaponPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
