@@ -5,20 +5,65 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    NavMeshAgent agent;
-    float speed;
-    float damage;
+    private NavMeshAgent agent;
+    public Transform playerTarget;
+    public float speed = 3.5f;
+    public float damage = 10f;
+    public float attackRange = 3.0f;
+    public float stoppingDistance = 1.5f; // Distance at which the enemy stops moving towards the player
+    public float attackCooldown = 1.5f; // Time (in seconds) between attacks
+    private bool canAttack = true;
+
+    private PlayerHealth playerHealth;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        // Get the NavMeshAgent component attached to the GameObject
         agent = GetComponent<NavMeshAgent>();
 
+        // Set the speed of the NavMeshAgent to the given value
+        agent.speed = speed;
+
+        // Set the agent's stopping distance to avoid pushing the player
+        agent.stoppingDistance = stoppingDistance;
+
+        // Get the PlayerHealth component from the player target
+        if (playerTarget != null)
+        {
+            playerHealth = playerTarget.GetComponent<PlayerHealth>();
+        }
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        // If the player target is assigned, set the destination to the player's position
+        if (playerTarget != null)
+        {
+            agent.SetDestination(playerTarget.position);
+
+            // Check if the enemy is within attack range of the player
+            float distanceToPlayer = Vector3.Distance(transform.position, playerTarget.position);
+            if (distanceToPlayer <= attackRange && canAttack)
+            {
+                StartCoroutine(AttackPlayer());
+            }
+        }
+    }
+
+    private IEnumerator AttackPlayer()
+    {
+        canAttack = false;
+        Debug.Log("Attacking player with " + damage + " damage");
+
+        // Apply damage to the palyer
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage((int)damage);
+        }
+
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;
     }
 }
