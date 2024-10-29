@@ -29,7 +29,8 @@ public class Pistol : MonoBehaviour
     public int PelletsUpgrade { get; set; } = 0;
     public float KickPerShotUpgrade { get; set; } = 1;
     public float InaccuracyPerShotUpgrade { get; set; } = 1;
-
+    public bool IsFullAuto = false;
+    public bool IsShotgun = false;
     [field: SerializeField] public float InAccuracy { get; private set; } = 0;
     [field: SerializeField] public float Kick { get; private set; } = 0;
 
@@ -39,8 +40,23 @@ public class Pistol : MonoBehaviour
     float kickLerp = 1;
 
     [SerializeField] GameObject bulletMark;
-    [SerializeField] PistolData pistolData;
+    [SerializeField] public PistolData pistolData;
     [SerializeField] PlayerController playerController;
+    void ClampUpgrades()
+    {
+        AccuracyRecoveryUpgrade = Mathf.Clamp(AccuracyRecoveryUpgrade,0.01f,20);
+        InaccuracyPerShotUpgrade = Mathf.Clamp(InaccuracyPerShotUpgrade,0.01f,20);
+        MaxInaccuracyUpgrade = Mathf.Clamp(MaxInaccuracyUpgrade,0.01f,20);
+        KickRecoveryUpgrade = Mathf.Clamp(KickRecoveryUpgrade,0.01f,20);
+        KickPerShotUpgrade = Mathf.Clamp(KickPerShotUpgrade,0.01f,20);
+        MaxKickUpgrade = Mathf.Clamp(MaxKickUpgrade,0.01f,20);
+        DamageUpgrade = Mathf.Clamp(DamageUpgrade, 0.01f, 20);
+        ReloadSpeedUpgrade = Mathf.Clamp(ReloadSpeedUpgrade, 0.01f, 20);
+        AttackSpeedUpgrade = Mathf.Clamp(AttackSpeedUpgrade, 0.01f, 20);
+        ChokeUpgrade = Mathf.Clamp(ChokeUpgrade, 0.01f, 20);
+        MaxAmmoUpgrade =(int) Mathf.Clamp(MaxAmmoUpgrade, 1, 500);
+       
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +90,7 @@ public class Pistol : MonoBehaviour
             Kick = 0;
             kickLerp = 1;
         }
+        ClampUpgrades();
     }
     private void Update()
     {
@@ -97,14 +114,15 @@ public class Pistol : MonoBehaviour
 
     void AutoShotGun()
     {
-        if(shotGunMode && fullAuto && canShoot && mouseIsDown && AmmoInGun > 0)
+        if(IsShotgun &&IsFullAuto&& canShoot && mouseIsDown && AmmoInGun > 0)
         {
             kickLerp = 1;
             AmmoInGun--;
             Kick += pistolData.PerShotKick / KickPerShotUpgrade;
             Kick = Mathf.Clamp(Kick, 0, maxKick / MaxKickUpgrade);
-            for (int i = 0; i < pistolData.ShotgunPellets + PelletsUpgrade; i++)
+            for (int i = 0; i <(int) Mathf.Clamp((pistolData.ShotgunPellets + PelletsUpgrade),1,200); i++)
             {
+
                 RaycastHit hit;
                 float xSpread = Random.Range(-pistolData.ShotgunSpread / ChokeUpgrade, pistolData.ShotgunSpread/ChokeUpgrade);
                 float ySpread = Random.Range(-pistolData.ShotgunSpread / ChokeUpgrade, pistolData.ShotgunSpread/ChokeUpgrade);
@@ -131,14 +149,15 @@ public class Pistol : MonoBehaviour
     }
     public void ShotGunFire()
     {
-        if (shotGunMode && canShoot && !fullAuto && AmmoInGun > 0)
+        if (IsShotgun && canShoot && !IsFullAuto && AmmoInGun > 0)
         {
             kickLerp = 1;
             AmmoInGun--;
             Kick += pistolData.PerShotKick / KickPerShotUpgrade;
             Kick = Mathf.Clamp(Kick, 0, maxKick / MaxKickUpgrade);
-            for (int i = 0; i < pistolData.ShotgunPellets + PelletsUpgrade; i++)
+            for (int i = 0; i <(int) Mathf.Clamp((pistolData.ShotgunPellets + PelletsUpgrade), 1, 200); i++)
             {
+                Debug.Log(i);
                 RaycastHit hit;
                 float xSpread = Random.Range(-pistolData.ShotgunSpread / ChokeUpgrade, pistolData.ShotgunSpread/ChokeUpgrade);
                 float ySpread = Random.Range(-pistolData.ShotgunSpread / ChokeUpgrade, pistolData.ShotgunSpread/ ChokeUpgrade);
@@ -166,7 +185,7 @@ public class Pistol : MonoBehaviour
     }
     public void FullAutoFire()
     {
-        if(canShoot && mouseIsDown && fullAuto && !shotGunMode && AmmoInGun > 0)
+        if(canShoot && mouseIsDown && IsFullAuto &&  !IsShotgun&& AmmoInGun > 0)
         {
             kickLerp = 1;
             AmmoInGun--;
@@ -200,7 +219,7 @@ public class Pistol : MonoBehaviour
     }
     public void Shoot()
     {
-        if(canShoot && !fullAuto && !shotGunMode && AmmoInGun > 0)
+        if(canShoot &&  !IsFullAuto&&  !IsShotgun && AmmoInGun > 0)
         {
             kickLerp = 1;
             AmmoInGun--;

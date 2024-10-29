@@ -442,7 +442,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 45624501}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: AccuracyRecoveryUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &45624501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,7 +648,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 62800106}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeAmmo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &62800106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,7 +1122,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 117660973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &117660973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,7 +1254,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 144683227}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeReloadSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &144683227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1577,7 +1625,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 166499550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &166499550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1755,7 +1815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 12.611345}
+  m_AnchoredPosition: {x: -1.0000229, y: 2.4113426}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &216388505
@@ -1839,7 +1899,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 216388508}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &216388508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2291,7 +2363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 12.611345}
+  m_AnchoredPosition: {x: -1.0000229, y: 2.4113426}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &261489312
@@ -2717,7 +2789,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 315610327}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradePellets
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &315610327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3174,7 +3258,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 6.3000026}
+  m_AnchoredPosition: {x: -1.0000229, y: -3.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &394637690
@@ -3712,7 +3796,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 418445227}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeChoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &418445227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3832,7 +3928,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 429039388}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: EnableFullAuto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &429039388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4713,7 +4821,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 616375651}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: KickPerShotUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &616375651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5377,7 +5497,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 684056794}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: GunHandlingUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &684056794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5718,7 +5850,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 6.3000026}
+  m_AnchoredPosition: {x: -1.0000229, y: -3.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &717090742
@@ -5802,7 +5934,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 717090745}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: KickPerShotUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &717090745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5922,7 +6066,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 718641835}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: GunHandlingUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &718641835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6042,7 +6198,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 750728681}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: EnableShotgun
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &750728681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6257,7 +6425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 12.611345}
+  m_AnchoredPosition: {x: -1.0000229, y: 2.4113426}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &789569611
@@ -6341,7 +6509,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 789569614}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: TheSlug
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &789569614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6498,6 +6678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2e4bc35fb8daf4999ddc2bea0095b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsFullAuto: 0
+  IsShotgun: 0
   <InAccuracy>k__BackingField: 0
   <Kick>k__BackingField: 0
   AmmoInGun: 0
@@ -6636,7 +6818,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 844492210}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: GunHandlingUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &844492210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6756,7 +6950,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 846818232}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradePellets
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &846818232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6913,7 +7119,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 864108876}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: EnableFullAuto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &864108876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8042,6 +8260,7 @@ GameObject:
   - component: {fileID: 945372516}
   - component: {fileID: 945372515}
   - component: {fileID: 945372514}
+  - component: {fileID: 945372518}
   m_Layer: 5
   m_Name: UpgradeMenu
   m_TagString: Untagged
@@ -8132,6 +8351,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &945372518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945372513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3edbc1e61725b42a14184c6822f613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childArray:
+  - {fileID: 1716207950}
+  - {fileID: 1440520427}
+  - {fileID: 1587094832}
+  pistolScript: {fileID: 819762975}
 --- !u!1 &1007354649
 GameObject:
   m_ObjectHideFlags: 0
@@ -8434,7 +8670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 12.611345}
+  m_AnchoredPosition: {x: -1.0000229, y: 2.4113426}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1052935665
@@ -8518,7 +8754,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1052935668}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: KickPerShotUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1052935668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8638,7 +8886,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1057303096}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: AccuracyRecoveryUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1057303096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8758,7 +9018,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066926918}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: KickRecoveryUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1066926918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8878,7 +9150,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1069277217}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeAtkSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1069277217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8998,7 +9282,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1079007143}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: KickRecoveryUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1079007143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9118,7 +9414,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1090505390}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeReloadSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1090505390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9280,7 +9588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1150299906
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9446,7 +9754,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1185029995}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeReloadSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1185029995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9708,7 +10028,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1200675989}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: TheSlug
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1200675989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9818,7 +10150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 12.611345}
+  m_AnchoredPosition: {x: -1.0000229, y: 2.4113426}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1349622451
@@ -9855,7 +10187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 6.3000026}
+  m_AnchoredPosition: {x: -1.0000229, y: -3.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1359760381
@@ -10341,7 +10673,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1414178621}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: EnableShotgun
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1414178621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10414,7 +10758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 12.611345}
+  m_AnchoredPosition: {x: -1.0000229, y: 2.4113426}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1416396918
@@ -10498,7 +10842,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1416396921}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: EnableFullAuto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1416396921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10585,6 +10941,7 @@ GameObject:
   - component: {fileID: 1440520424}
   - component: {fileID: 1440520426}
   - component: {fileID: 1440520425}
+  - component: {fileID: 1440520427}
   m_Layer: 5
   m_Name: FirstSelection (1)
   m_TagString: Untagged
@@ -10620,10 +10977,10 @@ RectTransform:
   - {fileID: 362793833}
   m_Father: {fileID: 1150299906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -540}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440520425
 MonoBehaviour:
@@ -10663,6 +11020,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440520423}
   m_CullTransparentMesh: 1
+--- !u!114 &1440520427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440520423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c871466a6acf55478543d211d0917a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listOfAllUpgrades:
+  - {fileID: 1751382602}
+  - {fileID: 2103975260}
+  - {fileID: 553934843}
+  - {fileID: 231074735}
+  - {fileID: 261489312}
+  - {fileID: 666778807}
+  - {fileID: 756458774}
+  - {fileID: 350842199}
+  - {fileID: 1838768237}
+  - {fileID: 1419120893}
+  - {fileID: 55768569}
+  - {fileID: 1619069720}
+  - {fileID: 519681364}
+  - {fileID: 362793832}
+  listOfStandardUpgrades:
+  - {fileID: 1751382602}
+  - {fileID: 2103975260}
+  - {fileID: 261489312}
+  - {fileID: 666778807}
+  - {fileID: 756458774}
+  - {fileID: 350842199}
+  - {fileID: 1838768237}
+  - {fileID: 519681364}
+  - {fileID: 362793832}
+  listOfShotgunSpecificUpgrades:
+  - {fileID: 553934843}
+  - {fileID: 1419120893}
+  - {fileID: 1619069720}
+  ShotGunCard: {fileID: 231074735}
+  FullAutoCard: {fileID: 55768569}
+  upgradeScript: {fileID: 945372518}
 --- !u!1 &1460602142
 GameObject:
   m_ObjectHideFlags: 0
@@ -10744,7 +11145,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1460602145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeAmmo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1460602145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10969,7 +11382,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1503382628}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: EnableShotgun
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1503382628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11328,7 +11753,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541766187}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradePellets
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1541766187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11415,6 +11852,7 @@ GameObject:
   - component: {fileID: 1587094829}
   - component: {fileID: 1587094831}
   - component: {fileID: 1587094830}
+  - component: {fileID: 1587094832}
   m_Layer: 5
   m_Name: FirstSelection (2)
   m_TagString: Untagged
@@ -11450,10 +11888,10 @@ RectTransform:
   - {fileID: 1313256618}
   m_Father: {fileID: 1150299906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1613.72, y: -540}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1587094830
 MonoBehaviour:
@@ -11493,6 +11931,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587094828}
   m_CullTransparentMesh: 1
+--- !u!114 &1587094832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587094828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c871466a6acf55478543d211d0917a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listOfAllUpgrades:
+  - {fileID: 1846123664}
+  - {fileID: 709057641}
+  - {fileID: 1703808107}
+  - {fileID: 386180850}
+  - {fileID: 1883741535}
+  - {fileID: 1349622451}
+  - {fileID: 71474815}
+  - {fileID: 256850314}
+  - {fileID: 206908758}
+  - {fileID: 1883208794}
+  - {fileID: 1415339763}
+  - {fileID: 784092035}
+  - {fileID: 1015596118}
+  - {fileID: 1313256617}
+  listOfStandardUpgrades:
+  - {fileID: 1846123664}
+  - {fileID: 709057641}
+  - {fileID: 1883741535}
+  - {fileID: 1349622451}
+  - {fileID: 71474815}
+  - {fileID: 256850314}
+  - {fileID: 206908758}
+  - {fileID: 1015596118}
+  - {fileID: 1313256617}
+  listOfShotgunSpecificUpgrades:
+  - {fileID: 1703808107}
+  - {fileID: 1883208794}
+  - {fileID: 784092035}
+  ShotGunCard: {fileID: 386180850}
+  FullAutoCard: {fileID: 1415339763}
+  upgradeScript: {fileID: 945372518}
 --- !u!1 &1607163653
 GameObject:
   m_ObjectHideFlags: 0
@@ -11889,7 +12371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1641724043}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeAmmo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1641724043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12279,7 +12773,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1682250716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: AccuracyPerShotUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1682250716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12352,7 +12858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 6.3000026}
+  m_AnchoredPosition: {x: -1.0000229, y: -3.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1716207946
@@ -12366,6 +12872,7 @@ GameObject:
   - component: {fileID: 1716207947}
   - component: {fileID: 1716207949}
   - component: {fileID: 1716207948}
+  - component: {fileID: 1716207950}
   m_Layer: 5
   m_Name: FirstSelection
   m_TagString: Untagged
@@ -12401,10 +12908,10 @@ RectTransform:
   - {fileID: 362257558}
   m_Father: {fileID: 1150299906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 306.28003, y: -540}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716207948
 MonoBehaviour:
@@ -12444,6 +12951,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716207946}
   m_CullTransparentMesh: 1
+--- !u!114 &1716207950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716207946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c871466a6acf55478543d211d0917a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listOfAllUpgrades:
+  - {fileID: 440357596}
+  - {fileID: 244207817}
+  - {fileID: 859192298}
+  - {fileID: 622813549}
+  - {fileID: 1575880814}
+  - {fileID: 60290024}
+  - {fileID: 613013026}
+  - {fileID: 293924481}
+  - {fileID: 246470101}
+  - {fileID: 112956282}
+  - {fileID: 1617505928}
+  - {fileID: 1197138229}
+  - {fileID: 1302283723}
+  - {fileID: 362257557}
+  listOfStandardUpgrades:
+  - {fileID: 440357596}
+  - {fileID: 244207817}
+  - {fileID: 859192298}
+  - {fileID: 622813549}
+  - {fileID: 112956282}
+  - {fileID: 1617505928}
+  - {fileID: 1197138229}
+  - {fileID: 1302283723}
+  - {fileID: 362257557}
+  listOfShotgunSpecificUpgrades:
+  - {fileID: 1575880814}
+  - {fileID: 60290024}
+  - {fileID: 246470101}
+  ShotGunCard: {fileID: 293924481}
+  FullAutoCard: {fileID: 613013026}
+  upgradeScript: {fileID: 945372518}
 --- !u!1 &1751382602
 GameObject:
   m_ObjectHideFlags: 0
@@ -12562,7 +13113,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1766137217}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeChoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1766137217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12682,7 +13245,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1810097987}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeChoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1810097987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12839,7 +13414,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1845240043}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeAtkSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1845240043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12912,7 +13499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.5, y: 6.3}
+  m_AnchoredPosition: {x: -1, y: -3.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1854974626
@@ -13264,7 +13851,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1881811196}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: KickRecoveryUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1881811196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13337,7 +13936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 12.611345}
+  m_AnchoredPosition: {x: -1.0000229, y: 2.4113426}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1883741535
@@ -13374,7 +13973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.49998, y: 6.3000026}
+  m_AnchoredPosition: {x: -1.0000229, y: -3.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1893487880
@@ -13458,7 +14057,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1893487883}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: AccuracyRecoveryUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1893487883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13712,7 +14323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1917511225}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: AccuracyPerShotUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1917511225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13937,7 +14560,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1924621335}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: AccuracyPerShotUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1924621335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14327,7 +14962,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1968630123}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: TheSlug
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1968630123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15130,7 +15777,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2115006096}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 945372518}
+        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+        m_MethodName: UpgradeAtkSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2115006096
 MonoBehaviour:
   m_ObjectHideFlags: 0
