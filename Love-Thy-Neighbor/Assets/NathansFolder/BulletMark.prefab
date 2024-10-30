@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1041659052887184657}
   - component: {fileID: 7706237347915640869}
   - component: {fileID: 8518641446280042761}
+  - component: {fileID: -6635797219973895005}
   m_Layer: 0
   m_Name: BulletMark
   m_TagString: Untagged
@@ -101,7 +102,19 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6635797219973895005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4671571655390466252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a4346a2488e3a45a89e4e90b3a281a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
