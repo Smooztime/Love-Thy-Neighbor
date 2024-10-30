@@ -124,7 +124,7 @@ public class Pistol : MonoBehaviour
 
     void AutoShotGun()
     {
-        if(IsShotgun &&IsFullAuto&& canShoot && mouseIsDown && AmmoInGun >= 0)
+        if(IsShotgun &&IsFullAuto&& canShoot && mouseIsDown && AmmoInGun > 0)
         {
             
             kickLerp = 1;
@@ -161,7 +161,7 @@ public class Pistol : MonoBehaviour
     }
     public void ShotGunFire()
     {
-        if (IsShotgun && canShoot && !IsFullAuto && AmmoInGun >= 0)
+        if (IsShotgun && canShoot && !IsFullAuto && AmmoInGun > 0)
         {
        
             kickLerp = 1;
@@ -199,7 +199,7 @@ public class Pistol : MonoBehaviour
     }
     public void FullAutoFire()
     {
-        if(canShoot && mouseIsDown && IsFullAuto &&  !IsShotgun&& AmmoInGun >= 0)
+        if(canShoot && mouseIsDown && IsFullAuto &&  !IsShotgun&& AmmoInGun > 0)
         {
           
             kickLerp = 1;
@@ -235,7 +235,7 @@ public class Pistol : MonoBehaviour
     }
     public void Shoot()
     {
-        if(canShoot &&  !IsFullAuto&&  !IsShotgun && AmmoInGun >= 0)
+        if(canShoot &&  !IsFullAuto&&  !IsShotgun && AmmoInGun > 0)
         {
       
             kickLerp = 1;
