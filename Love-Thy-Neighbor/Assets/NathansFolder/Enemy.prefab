@@ -301,6 +301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FMData: {fileID: 11400000, guid: 2628d760f6b659b458d7ebfb4bda631b, type: 2}
   moneyForKill: 50
+  partEnemySystem: {fileID: 5613687615091114341, guid: 85586b8a13ab59247baef998864fe1a8,
+    type: 3}
 --- !u!195 &9020691374769092817
 NavMeshAgent:
   m_ObjectHideFlags: 0

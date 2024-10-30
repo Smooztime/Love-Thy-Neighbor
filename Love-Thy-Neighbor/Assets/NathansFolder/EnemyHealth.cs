@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] FlowerManData FMData;
     [SerializeField] int moneyForKill;
+    [SerializeField] GameObject partEnemySystem;
     float health;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(health < 0)
         {
+            Instantiate(partEnemySystem, new Vector3(transform.position.x,transform.position.y + 1,transform.position.z), Quaternion.identity);
             GameObject.Find("UpgradeMenu").GetComponent<FinaceHandler>().PlayerMoney+=moneyForKill;
             Destroy(gameObject);
         }
