@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -15,7 +16,7 @@ public class Pistol : MonoBehaviour
     float reloadSpeed => pistolData.ReloadSpeed;
     bool fullAuto => pistolData.FullAutoMode;
     bool shotGunMode => pistolData.ShotGunMode;
-    int maxAmmo => pistolData.MaxAmmo;
+    public int maxAmmo => pistolData.MaxAmmo;
 
     public float AccuracyRecoveryUpgrade { get; set; } = 1;
     public float KickRecoveryUpgrade { get; set; } = 1;
@@ -42,6 +43,7 @@ public class Pistol : MonoBehaviour
     [SerializeField] GameObject bulletMark;
     [SerializeField] public PistolData pistolData;
     [SerializeField] PlayerController playerController;
+    [SerializeField] TMP_Text ammoText;
     void ClampUpgrades()
     {
         AccuracyRecoveryUpgrade = Mathf.Clamp(AccuracyRecoveryUpgrade,0.01f,20);
@@ -54,21 +56,27 @@ public class Pistol : MonoBehaviour
         ReloadSpeedUpgrade = Mathf.Clamp(ReloadSpeedUpgrade, 0.01f, 20);
         AttackSpeedUpgrade = Mathf.Clamp(AttackSpeedUpgrade, 0.01f, 20);
         ChokeUpgrade = Mathf.Clamp(ChokeUpgrade, 0.01f, 20);
-        MaxAmmoUpgrade =(int) Mathf.Clamp(MaxAmmoUpgrade, 1, 500);
+        MaxAmmoUpgrade =(int) Mathf.Clamp(MaxAmmoUpgrade, -maxAmmo+1, 500);
        
     }
     // Start is called before the first frame update
     void Start()
     {
+        
         AmmoInGun = maxAmmo + MaxAmmoUpgrade;
-       // pistolDamage = pistolData.Damage;
-       // attackSpeed = pistolData.AttackSpeed;
-       //// accuracyRecoverySpeed = pistolData.accuracyRecoverySpeed;
-       // maxInaccuracy = pistolData.MaxInaccuracy;
-       // kickRecoverySpeed = pistolData.KickRecoverySpeed;
-       // maxKick = pistolData.MaxKick;
+        UpdateAmmoText();
+        // pistolDamage = pistolData.Damage;
+        // attackSpeed = pistolData.AttackSpeed;
+        //// accuracyRecoverySpeed = pistolData.accuracyRecoverySpeed;
+        // maxInaccuracy = pistolData.MaxInaccuracy;
+        // kickRecoverySpeed = pistolData.KickRecoverySpeed;
+        // maxKick = pistolData.MaxKick;
     }
-
+    public void UpdateAmmoText()
+    {
+        AmmoInGun = Mathf.Clamp(AmmoInGun,0, maxAmmo + MaxAmmoUpgrade);
+        ammoText.SetText(AmmoInGun + "/" + (maxAmmo + MaxAmmoUpgrade));
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -105,7 +113,9 @@ public class Pistol : MonoBehaviour
    public IEnumerator ReloadGun()
     {
         yield return new WaitForSeconds(reloadSpeed / ReloadSpeedUpgrade);
+        
         AmmoInGun = maxAmmo + MaxAmmoUpgrade;
+        UpdateAmmoText();
     }
     public void Reload()
     {
@@ -114,10 +124,12 @@ public class Pistol : MonoBehaviour
 
     void AutoShotGun()
     {
-        if(IsShotgun &&IsFullAuto&& canShoot && mouseIsDown && AmmoInGun > 0)
+        if(IsShotgun &&IsFullAuto&& canShoot && mouseIsDown && AmmoInGun >= 0)
         {
+            
             kickLerp = 1;
             AmmoInGun--;
+            UpdateAmmoText();
             Kick += pistolData.PerShotKick / KickPerShotUpgrade;
             Kick = Mathf.Clamp(Kick, 0, maxKick / MaxKickUpgrade);
             for (int i = 0; i <(int) Mathf.Clamp((pistolData.ShotgunPellets + PelletsUpgrade),1,200); i++)
@@ -149,10 +161,12 @@ public class Pistol : MonoBehaviour
     }
     public void ShotGunFire()
     {
-        if (IsShotgun && canShoot && !IsFullAuto && AmmoInGun > 0)
+        if (IsShotgun && canShoot && !IsFullAuto && AmmoInGun >= 0)
         {
+       
             kickLerp = 1;
             AmmoInGun--;
+            UpdateAmmoText();
             Kick += pistolData.PerShotKick / KickPerShotUpgrade;
             Kick = Mathf.Clamp(Kick, 0, maxKick / MaxKickUpgrade);
             for (int i = 0; i <(int) Mathf.Clamp((pistolData.ShotgunPellets + PelletsUpgrade), 1, 200); i++)
@@ -185,10 +199,12 @@ public class Pistol : MonoBehaviour
     }
     public void FullAutoFire()
     {
-        if(canShoot && mouseIsDown && IsFullAuto &&  !IsShotgun&& AmmoInGun > 0)
+        if(canShoot && mouseIsDown && IsFullAuto &&  !IsShotgun&& AmmoInGun >= 0)
         {
+          
             kickLerp = 1;
             AmmoInGun--;
+            UpdateAmmoText();
             float xBloom = Random.Range(-InAccuracy , InAccuracy);
             InAccuracy += pistolData.PerShotRecoil / InaccuracyPerShotUpgrade;
             Kick += pistolData.PerShotKick / KickPerShotUpgrade;
@@ -219,10 +235,12 @@ public class Pistol : MonoBehaviour
     }
     public void Shoot()
     {
-        if(canShoot &&  !IsFullAuto&&  !IsShotgun && AmmoInGun > 0)
+        if(canShoot &&  !IsFullAuto&&  !IsShotgun && AmmoInGun >= 0)
         {
+      
             kickLerp = 1;
             AmmoInGun--;
+            UpdateAmmoText();
             float xBloom = Random.Range(-InAccuracy, InAccuracy);
             InAccuracy += pistolData.PerShotRecoil / InaccuracyPerShotUpgrade;
             Kick += pistolData.PerShotKick / KickPerShotUpgrade;

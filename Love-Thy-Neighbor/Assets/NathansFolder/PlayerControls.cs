@@ -190,6 +190,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Interact"",
+            ""id"": ""3cb592eb-a9f6-4a6d-880d-73801da82493"",
+            ""actions"": [
+                {
+                    ""name"": ""OpenUpgradeMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f3b501d-2466-4b1b-9a4b-fb7347f34f04"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""164d5d5b-705b-43d1-b8c8-9f7dce4d0340"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenUpgradeMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -205,6 +233,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Look
         m_Look = asset.FindActionMap("Look", throwIfNotFound: true);
         m_Look_Look = m_Look.FindAction("Look", throwIfNotFound: true);
+        // Interact
+        m_Interact = asset.FindActionMap("Interact", throwIfNotFound: true);
+        m_Interact_OpenUpgradeMenu = m_Interact.FindAction("OpenUpgradeMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -416,6 +447,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public LookActions @Look => new LookActions(this);
+
+    // Interact
+    private readonly InputActionMap m_Interact;
+    private List<IInteractActions> m_InteractActionsCallbackInterfaces = new List<IInteractActions>();
+    private readonly InputAction m_Interact_OpenUpgradeMenu;
+    public struct InteractActions
+    {
+        private @PlayerControls m_Wrapper;
+        public InteractActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @OpenUpgradeMenu => m_Wrapper.m_Interact_OpenUpgradeMenu;
+        public InputActionMap Get() { return m_Wrapper.m_Interact; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InteractActions set) { return set.Get(); }
+        public void AddCallbacks(IInteractActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InteractActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InteractActionsCallbackInterfaces.Add(instance);
+            @OpenUpgradeMenu.started += instance.OnOpenUpgradeMenu;
+            @OpenUpgradeMenu.performed += instance.OnOpenUpgradeMenu;
+            @OpenUpgradeMenu.canceled += instance.OnOpenUpgradeMenu;
+        }
+
+        private void UnregisterCallbacks(IInteractActions instance)
+        {
+            @OpenUpgradeMenu.started -= instance.OnOpenUpgradeMenu;
+            @OpenUpgradeMenu.performed -= instance.OnOpenUpgradeMenu;
+            @OpenUpgradeMenu.canceled -= instance.OnOpenUpgradeMenu;
+        }
+
+        public void RemoveCallbacks(IInteractActions instance)
+        {
+            if (m_Wrapper.m_InteractActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInteractActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InteractActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InteractActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InteractActions @Interact => new InteractActions(this);
     public interface IMovementActions
     {
         void OnWASD(InputAction.CallbackContext context);
@@ -429,5 +506,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface ILookActions
     {
         void OnLook(InputAction.CallbackContext context);
+    }
+    public interface IInteractActions
+    {
+        void OnOpenUpgradeMenu(InputAction.CallbackContext context);
     }
 }

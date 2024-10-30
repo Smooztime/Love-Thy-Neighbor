@@ -168,6 +168,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Interact",
+            "id": "3cb592eb-a9f6-4a6d-880d-73801da82493",
+            "actions": [
+                {
+                    "name": "OpenUpgradeMenu",
+                    "type": "Button",
+                    "id": "7f3b501d-2466-4b1b-9a4b-fb7347f34f04",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "164d5d5b-705b-43d1-b8c8-9f7dce4d0340",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenUpgradeMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

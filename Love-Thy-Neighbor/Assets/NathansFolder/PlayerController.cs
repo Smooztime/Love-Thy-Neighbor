@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform cameraTransform;
     [SerializeField] PlayerData playerData;
     [SerializeField] Pistol pistol;
+    [SerializeField] Upgrade upgradeMenuScript;
     float movementSpeed;
     float lookSensitivity;
     float clampRotation;
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
     float upDownRotation = 0;
     float leftRightRotation = 0;
     float temporaryKickRotation = 0;
+
+    public bool upgradeMenuOpen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +88,18 @@ public class PlayerController : MonoBehaviour
     public void GunKickUp(float angleToMoveUp)
     {
         temporaryKickRotation = angleToMoveUp;
+    }
+    public void HandleUpgradeMenu()
+    {
+        upgradeMenuOpen = !upgradeMenuOpen;
+        if(upgradeMenuOpen)
+        {
+            upgradeMenuScript.OpenUpgradeWindow();
+        }
+        else
+        {
+            upgradeMenuScript.CloseUpgradeWindow();
+        }
     }
     public void HandleAim()
     {

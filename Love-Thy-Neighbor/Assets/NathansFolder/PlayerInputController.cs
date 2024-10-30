@@ -16,6 +16,7 @@ public class PlayerInputController : MonoBehaviour
         playerControls.Combat.Reload.performed += (var) => playerController.Reload();
         playerControls.Combat.Aim.performed += (var) => playerController.HandleAim();
         playerControls.Look.Look.performed += (var) => playerController.HandleMouse(var.ReadValue<Vector2>());
+        playerControls.Interact.OpenUpgradeMenu.performed += (var) => playerController.HandleUpgradeMenu();
         playerControls.Enable();
     }
 

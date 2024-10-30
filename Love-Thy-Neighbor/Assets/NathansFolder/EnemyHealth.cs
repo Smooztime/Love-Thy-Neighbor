@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] FlowerManData FMData;
+    [SerializeField] int moneyForKill;
     float health;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(health < 0)
         {
+            GameObject.Find("UpgradeMenu").GetComponent<FinaceHandler>().PlayerMoney+=moneyForKill;
             Destroy(gameObject);
         }
     }
