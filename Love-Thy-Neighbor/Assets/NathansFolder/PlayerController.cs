@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerData playerData;
     [SerializeField] Pistol pistol;
     [SerializeField] Upgrade upgradeMenuScript;
+    [SerializeField] float TimeUnfrozenFromShooting;
+    [SerializeField] float TimeUnfrozenFromMoving;
     float movementSpeed;
     float lookSensitivity;
     float clampRotation;
@@ -21,6 +23,9 @@ public class PlayerController : MonoBehaviour
     float temporaryKickRotation = 0;
 
     public bool upgradeMenuOpen = false;
+
+    [SerializeField] FreezeManager freezeManager;
+    float timeFreezeBuffer = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,9 +56,14 @@ public class PlayerController : MonoBehaviour
             yAxisVelocity = -playerTransform.forward;
         }
         playerRigidBody.velocity = (xAxisVelocity + yAxisVelocity).normalized * movementSpeed;
+        
     }
     public void HandleMovement(Vector2 input)
     {
+        if(timeFreezeBuffer < TimeUnfrozenFromMoving)
+        {
+            timeFreezeBuffer = TimeUnfrozenFromMoving;
+        }
         Debug.Log(playerTransform.forward);
        rightLeftInput = input.x;
         forwardBackInput = input.y;
@@ -73,6 +83,7 @@ public class PlayerController : MonoBehaviour
     public void HandleShoot()
     {
         Debug.Log("Shooting");
+        timeFreezeBuffer = TimeUnfrozenFromShooting;
         pistol.mouseIsDown = true;
         pistol.Shoot();
         pistol.ShotGunFire();
@@ -83,6 +94,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Reload()
     {
+        timeFreezeBuffer = TimeUnfrozenFromShooting;
         pistol.Reload();
     }
     public void GunKickUp(float angleToMoveUp)
@@ -117,6 +129,16 @@ public class PlayerController : MonoBehaviour
         else
         {
             temporaryKickRotation = 0;
+        }
+        
+        if(timeFreezeBuffer <= 0)
+        {
+            freezeManager.TimeIsFrozen = true;
+        }
+        else
+        {
+            freezeManager.TimeIsFrozen = false;
+            timeFreezeBuffer -= Time.deltaTime;
         }
     }
 }

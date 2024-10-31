@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
 {
     private NavMeshAgent agent;
     public Transform playerTarget;
-    public float speed = 3.5f;
+    public float speed = 7f;
     public float damage = 10f;
     public float attackRange = 3.0f;
     public float stoppingDistance = 1.5f; // Distance at which the enemy stops moving towards the player
@@ -15,10 +15,12 @@ public class EnemyAI : MonoBehaviour
     private bool canAttack = true;
 
     private PlayerHealth playerHealth;
+    FreezeManager freezeManager;
 
     // Start is called before the first frame update
     private void Start()
     {
+        freezeManager = GameObject.Find("FreezeManager").GetComponent<FreezeManager>();
         // Get the NavMeshAgent component attached to the GameObject
         agent = GetComponent<NavMeshAgent>();
 
@@ -42,10 +44,10 @@ public class EnemyAI : MonoBehaviour
         if (playerTarget != null)
         {
             agent.SetDestination(playerTarget.position);
-
+            agent.speed = speed * freezeManager.FrozenTime;
             // Check if the enemy is within attack range of the player
             float distanceToPlayer = Vector3.Distance(transform.position, playerTarget.position);
-            if (distanceToPlayer <= attackRange && canAttack)
+            if (distanceToPlayer <= attackRange && canAttack && freezeManager.TimeIsFrozen == false)
             {
                 StartCoroutine(AttackPlayer());
             }

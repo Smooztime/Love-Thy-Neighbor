@@ -81,118 +81,117 @@ public class Upgrade : MonoBehaviour
     
     public void UpgradeDamage()
     {
-        pistolScript.DamageUpgrade += .2f;
-        pistolScript.AttackSpeedUpgrade -= .1f;
-        pistolScript.KickPerShotUpgrade -= .12f;
+        pistolScript.DamageUpgrade += .5f;
+        pistolScript.AttackSpeedUpgrade -= .15f;
+        pistolScript.KickPerShotUpgrade -= .2f;
         pistolScript.MaxKickUpgrade -= .05f;
         pistolScript.MaxAmmoUpgrade -= 5;
         PurchasedUpgrade();
     }
     public void UpgradeAtkSpeed()
     {
-        pistolScript.AttackSpeedUpgrade += 0.17f;
-        pistolScript.DamageUpgrade -= .13f;
-        pistolScript.MaxInaccuracyUpgrade -= .07f;
-        pistolScript.AccuracyRecoveryUpgrade -= .07f;
+        pistolScript.AttackSpeedUpgrade += 0.2f;
+        pistolScript.DamageUpgrade -= .16f;
+        pistolScript.MaxInaccuracyUpgrade -= .1f;
+        pistolScript.AccuracyRecoveryUpgrade -= .1f;
         PurchasedUpgrade();
     }
     public void UpgradeReloadSpeed()
     {
-        pistolScript.ReloadSpeedUpgrade += .2f;
+        pistolScript.ReloadSpeedUpgrade += .3f;
         pistolScript.MaxAmmoUpgrade -= 5;
         PurchasedUpgrade();
     }
     public void UpgradeAmmo()
     {
         pistolScript.MaxAmmoUpgrade += 10;
-        pistolScript.ReloadSpeedUpgrade -= 0.1f;
+        pistolScript.ReloadSpeedUpgrade -= 0.25f;
         PurchasedUpgrade();
     }
     public void UpgradeChoke()
     {
-        pistolScript.ChokeUpgrade += 0.3f;
+        pistolScript.ChokeUpgrade += 0.5f;
         pistolScript.DamageUpgrade -= 0.08f;
         pistolScript.PelletsUpgrade -= 2;
         PurchasedUpgrade();
     }
     public void UpgradePellets()
     {
-        pistolScript.DamageUpgrade -= 0.2f;
+        pistolScript.DamageUpgrade -= 0.08f;
         pistolScript.PelletsUpgrade += 5;
-        pistolScript.ChokeUpgrade -= .12f;
+        pistolScript.ChokeUpgrade -= .15f;
         PurchasedUpgrade();
     }
     public void EnableFullAuto()
     {
         HasFullAuto = true;
         pistolScript.IsFullAuto = true;
-        pistolScript.AttackSpeedUpgrade += 0.25f;
+        pistolScript.AttackSpeedUpgrade += .7f;
         pistolScript.DamageUpgrade -= 0.15f;
-        pistolScript.ReloadSpeedUpgrade -= 0.1f;
+        pistolScript.ReloadSpeedUpgrade -= 0.2f;
         pistolScript.MaxInaccuracyUpgrade -= 0.1f;
         pistolScript.InaccuracyPerShotUpgrade += 0.1f;
-        pistolScript.AccuracyRecoveryUpgrade -= 0.07f;
-        pistolScript.MaxAmmoUpgrade += 5;
+        pistolScript.AccuracyRecoveryUpgrade -= 0.1f;
         PurchasedUpgrade();
     }
     public void EnableShotgun()
     {
         HasShotgun = true;
         pistolScript.IsShotgun = true;
-        pistolScript.DamageUpgrade -= 0.6f;
+        pistolScript.DamageUpgrade -= 0.5f;
         pistolScript.KickPerShotUpgrade -= 0.5f;
         pistolScript.MaxKickUpgrade -= 0.5f;
-        pistolScript.MaxAmmoUpgrade -=(int)((pistolScript.MaxAmmoUpgrade + pistolScript.maxAmmo) / 2);
+        pistolScript.MaxAmmoUpgrade -=(int)((pistolScript.MaxAmmoUpgrade + pistolScript.maxAmmo) / 1.5);
         pistolScript.ReloadSpeedUpgrade -= 0.25f;
         PurchasedUpgrade();
     }
     public void TheSlug()
     {
         pistolScript.PelletsUpgrade -= 100;
-        pistolScript.DamageUpgrade += 2f;
+        pistolScript.DamageUpgrade += 5f;
         pistolScript.ReloadSpeedUpgrade += 1f;
-        pistolScript.AttackSpeedUpgrade -= 0.4f;
-        pistolScript.KickPerShotUpgrade -= .2f;
+        pistolScript.AttackSpeedUpgrade -= 0.7f;
+        pistolScript.KickPerShotUpgrade -= .8f;
         pistolScript.MaxKickUpgrade -= .5f;
         pistolScript.InaccuracyPerShotUpgrade += 1.5f;
         pistolScript.MaxInaccuracyUpgrade += 1.5f;
-        pistolScript.ChokeUpgrade += 3f;
+        pistolScript.ChokeUpgrade += 4f;
         PurchasedUpgrade();
     }
     public void AccuracyRecoveryUpgrade()
     {
-        pistolScript.AccuracyRecoveryUpgrade += 0.2f;
-        pistolScript.InaccuracyPerShotUpgrade -= 0.02f;
+        pistolScript.AccuracyRecoveryUpgrade += 0.3f;
+        pistolScript.InaccuracyPerShotUpgrade -= 0.1f;
         PurchasedUpgrade();
     }
     public void AccuracyPerShotUpgrade()
     {
-        pistolScript.InaccuracyPerShotUpgrade += 0.15f;
-        pistolScript.MaxInaccuracyUpgrade += 0.15f;
+        pistolScript.InaccuracyPerShotUpgrade += 0.3f;
+        pistolScript.MaxInaccuracyUpgrade += 0.3f;
         PurchasedUpgrade();
     }
     public void KickRecoveryUpgrade()
     {
-        pistolScript.KickRecoveryUpgrade += 0.2f;
-        pistolScript.KickPerShotUpgrade -= 0.02f;
+        pistolScript.KickRecoveryUpgrade += 0.3f;
+        pistolScript.KickPerShotUpgrade -= 0.1f;
         PurchasedUpgrade();
     }
     public void KickPerShotUpgrade()
     {
-        pistolScript.KickPerShotUpgrade += 0.15f;
-        pistolScript.MaxKickUpgrade += 0.15f;
+        pistolScript.KickPerShotUpgrade += 0.35f;
+        pistolScript.MaxKickUpgrade += 0.35f;
         PurchasedUpgrade();
     }
     public void GunHandlingUpgrade()
     {
-        pistolScript.KickPerShotUpgrade += 0.1f;
-        pistolScript.KickRecoveryUpgrade += 0.08f;
-        pistolScript.MaxKickUpgrade += 0.1f;
-        pistolScript.InaccuracyPerShotUpgrade += 0.1f;
-        pistolScript.MaxInaccuracyUpgrade += 0.1f;
-        pistolScript.AccuracyRecoveryUpgrade += 0.08f;
-        pistolScript.DamageUpgrade -= 0.05f;
-        pistolScript.AttackSpeedUpgrade -= 0.05f;
+        pistolScript.KickPerShotUpgrade += 0.25f;
+        pistolScript.KickRecoveryUpgrade += 0.15f;
+        pistolScript.MaxKickUpgrade += 0.15f;
+        pistolScript.InaccuracyPerShotUpgrade += 0.25f;
+        pistolScript.MaxInaccuracyUpgrade += 0.15f;
+        pistolScript.AccuracyRecoveryUpgrade += 0.15f;
+        pistolScript.DamageUpgrade -= 0.1f;
+        pistolScript.AttackSpeedUpgrade -= 0.1f;
         PurchasedUpgrade();
     }
 }
