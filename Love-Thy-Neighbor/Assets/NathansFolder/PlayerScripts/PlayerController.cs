@@ -30,6 +30,13 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (playerData == null || playerTransform == null || playerRigidBody == null || cameraTransform == null || pistol == null || upgradeMenuScript == null || freezeManager == null)
+        {
+            Debug.LogError("PlayerController: One or more required components are not assigned in the Inspector.");
+            enabled = false;
+            return;
+        }
+
         movementSpeed = playerData.moveSpeed;
         lookSensitivity = playerData.lookSens;
         clampRotation = playerData.clampRotation;
@@ -38,6 +45,11 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (playerTransform == null || playerRigidBody == null)
+        {
+            return;
+        }
+
         Vector3 xAxisVelocity = new Vector3(0, 0, 0);
         Vector3 yAxisVelocity = new Vector3(0, 0, 0);
         if (rightLeftInput > 0)
@@ -73,13 +85,15 @@ public class PlayerController : MonoBehaviour
             }
         }
         playerRigidBody.velocity = (xAxisVelocity + yAxisVelocity).normalized * movementSpeed;
-        
     }
     public void HandleMovement(Vector2 input)
     {
-        
+        if (playerTransform == null)
+        {
+            return;
+        }
         Debug.Log(playerTransform.forward);
-       rightLeftInput = input.x;
+        rightLeftInput = input.x;
         forwardBackInput = input.y;
     }
     public void CancelMove()
@@ -89,14 +103,21 @@ public class PlayerController : MonoBehaviour
     }
     public void HandleMouse(Vector2 input)
     {
+        if (playerTransform == null)
+        {
+            return;
+        }
         upDownRotation += -input.y * lookSensitivity;
         leftRightRotation += input.x;
         upDownRotation = Mathf.Clamp(upDownRotation, -60 + temporaryKickRotation, 60 + temporaryKickRotation);
-        playerTransform.eulerAngles = new Vector3(playerTransform.rotation.x,leftRightRotation * lookSensitivity, playerTransform.rotation.z);
+        playerTransform.eulerAngles = new Vector3(playerTransform.rotation.x, leftRightRotation * lookSensitivity, playerTransform.rotation.z);
     }
     public void HandleShoot()
     {
-       // Debug.Log("Shooting");
+        if (pistol == null)
+        {
+            return;
+        }
         timeFreezeBuffer = TimeUnfrozenFromShooting;
         pistol.mouseIsDown = true;
         pistol.Shoot();
@@ -104,10 +125,18 @@ public class PlayerController : MonoBehaviour
     }
     public void StopShoot()
     {
+        if (pistol == null)
+        {
+            return;
+        }
         pistol.mouseIsDown = false;
     }
     public void Reload()
     {
+        if (pistol == null)
+        {
+            return;
+        }
         timeFreezeBuffer = TimeUnfrozenFromShooting;
         pistol.Reload();
     }
@@ -117,9 +146,13 @@ public class PlayerController : MonoBehaviour
     }
     public void HandleUpgradeMenu()
     {
-        
+        if (upgradeMenuScript == null)
+        {
+            return;
+        }
+
         upgradeMenuOpen = !upgradeMenuOpen;
-        if(upgradeMenuOpen && canUpgrade)
+        if (upgradeMenuOpen && canUpgrade)
         {
             upgradeMenuScript.OpenUpgradeWindow();
         }
@@ -136,17 +169,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cameraTransform.localRotation = Quaternion.Euler(new Vector3(Mathf.Clamp(upDownRotation - temporaryKickRotation, -60,60), 0, 0));
+        if (cameraTransform == null || freezeManager == null)
+        {
+            return;
+        }
+        cameraTransform.localRotation = Quaternion.Euler(new Vector3(Mathf.Clamp(upDownRotation - temporaryKickRotation, -60, 60), 0, 0));
         if (temporaryKickRotation > 0)
         {
-            temporaryKickRotation = pistol.Kick;
+            temporaryKickRotation = pistol != null ? pistol.Kick : 0;
         }
         else
         {
             temporaryKickRotation = 0;
         }
-        
-        if(timeFreezeBuffer <= 0)
+
+        if (timeFreezeBuffer <= 0)
         {
             freezeManager.TimeIsFrozen = true;
         }
@@ -158,7 +195,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "UpgradeCoffin")
+        if (other.gameObject.tag == "UpgradeCoffin")
         {
             canUpgrade = true;
         }
