@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1683876157635126787}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 8156302608527775758}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,11 +249,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4668189262806511298}
   - component: {fileID: 114231805972653323}
-  - component: {fileID: 7830518134166309992}
+  - component: {fileID: 4450296279356240484}
   - component: {fileID: 9020691374769092817}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
+  m_Name: RangedEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,12 +288,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTarget: {fileID: 0}
-  speed: 3.5
-  damage: 10
-  attackRange: 3
-  stoppingDistance: 1.5
+  speed: 5
+  damage: 15
+  attackRange: 25
+  stoppingDistance: 20
   attackCooldown: 1.5
---- !u!114 &7830518134166309992
+  isRanged: 1
+  rangeForBullet: 1000
+--- !u!114 &4450296279356240484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,12 +304,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7729700784567261201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d574a42b67c48c4fa6439b0f05e5cbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 671226e179303dc45880637fc5fb5600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FMData: {fileID: 11400000, guid: 2628d760f6b659b458d7ebfb4bda631b, type: 2}
-  moneyForKill: 50
-  partEnemySystem: {fileID: 5613687615091114341, guid: 85586b8a13ab59247baef998864fe1a8,
+  superSoakerData: {fileID: 11400000, guid: f7560bec6c2562846afcbfbb27f532a8, type: 2}
+  moneyForKill: 100
+  partEnemySystem: {fileID: 5613687615091114341, guid: 59ba4498d60139843b7f70d79063cab0,
     type: 3}
 --- !u!195 &9020691374769092817
 NavMeshAgent:

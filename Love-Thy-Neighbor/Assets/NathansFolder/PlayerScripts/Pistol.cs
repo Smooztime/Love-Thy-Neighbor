@@ -142,7 +142,14 @@ public class Pistol : MonoBehaviour
                 Debug.DrawRay(ray.origin, ray.direction * 10);
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Instantiate(bulletMark, hit.point, Quaternion.identity);
+                    if (hit.collider.gameObject.tag != "Enemy" && hit.collider.gameObject.tag != "Bullet")
+                    {
+                        Instantiate(bulletMark, hit.point, Quaternion.identity);
+                    }
+                    if (hit.collider.gameObject.tag == "Bullet")
+                    {
+                        Destroy(hit.collider.gameObject);
+                    }
                     if (hit.collider.gameObject.TryGetComponent(out HeadHit head))
                     {
                         head.HeadWasHit(pistolDamage * DamageUpgrade);
@@ -179,7 +186,15 @@ public class Pistol : MonoBehaviour
                 Debug.DrawRay(ray.origin, ray.direction * 10);
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Instantiate(bulletMark, hit.point, Quaternion.identity);
+                    if(hit.collider.gameObject.tag != "Enemy" && hit.collider.gameObject.tag != "Bullet")
+                    {
+                        Instantiate(bulletMark, hit.point, Quaternion.identity);
+                    }
+                    if(hit.collider.gameObject.tag == "Bullet")
+                    {
+                        Destroy(hit.collider.gameObject);
+                    }
+                    
                     if (hit.collider.gameObject.TryGetComponent(out HeadHit head))
                     {
                         head.HeadWasHit(pistolDamage * DamageUpgrade);
@@ -216,7 +231,14 @@ public class Pistol : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Instantiate(bulletMark, hit.point, Quaternion.identity);
+                if (hit.collider.gameObject.tag != "Enemy" && hit.collider.gameObject.tag != "Bullet")
+                {
+                    Instantiate(bulletMark, hit.point, Quaternion.identity);
+                }
+                if (hit.collider.gameObject.tag == "Bullet")
+                {
+                    Destroy(hit.collider.gameObject);
+                }
                 if (hit.collider.gameObject.TryGetComponent(out HeadHit head))
                 {
                     head.HeadWasHit(pistolDamage * DamageUpgrade);
@@ -252,14 +274,23 @@ public class Pistol : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Instantiate(bulletMark, hit.point, Quaternion.identity);
+                if (hit.collider.gameObject.tag != "Enemy" && hit.collider.gameObject.tag != "Bullet")
+                {
+                    Instantiate(bulletMark, hit.point, Quaternion.identity);
+                }
+                if (hit.collider.gameObject.tag == "Bullet")
+                {
+                    Destroy(hit.collider.gameObject);
+                }
                 if (hit.collider.gameObject.TryGetComponent(out HeadHit head))
                 {
                     head.HeadWasHit(pistolDamage * DamageUpgrade);
+                    Debug.Log("headHit");
                 }
                 if (hit.collider.gameObject.TryGetComponent(out BodyHit body))
                 {
                     body.BodyWasHit(pistolDamage * DamageUpgrade);
+                    Debug.Log("bodyHit");
                 }
 
             }

@@ -5,7 +5,9 @@ using UnityEngine;
 public class FreezeManager : MonoBehaviour
 {
     public bool TimeIsFrozen = false;
-    public int FrozenTime { get; private set; } = 1; 
+    public int FrozenTime { get; private set; } = 1;
+    //for ranged enemy
+    public GameObject bulletPrefab;
     // Start is called before the first frame update
     void Start()
     {

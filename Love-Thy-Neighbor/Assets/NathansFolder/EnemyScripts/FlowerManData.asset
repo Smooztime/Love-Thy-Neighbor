@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76104512a3bf35f4fab0875205be6a02, type: 3}
   m_Name: FlowerManData
   m_EditorClassIdentifier: 
-  health: 100
+  health: 75
   speed: 10
   damage: 10

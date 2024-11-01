@@ -42,28 +42,41 @@ public class PlayerController : MonoBehaviour
         if (rightLeftInput > 0)
         {
             xAxisVelocity = playerTransform.right;
+            if (timeFreezeBuffer < TimeUnfrozenFromMoving)
+            {
+                timeFreezeBuffer = TimeUnfrozenFromMoving;
+            }
         }
         else if (rightLeftInput < 0)
         {
             xAxisVelocity = -playerTransform.right;
+            if (timeFreezeBuffer < TimeUnfrozenFromMoving)
+            {
+                timeFreezeBuffer = TimeUnfrozenFromMoving;
+            }
         }
         if (forwardBackInput > 0)
         {
             yAxisVelocity = playerTransform.forward;
+            if (timeFreezeBuffer < TimeUnfrozenFromMoving)
+            {
+                timeFreezeBuffer = TimeUnfrozenFromMoving;
+            }
         }
         else if (forwardBackInput < 0)
         {
             yAxisVelocity = -playerTransform.forward;
+            if (timeFreezeBuffer < TimeUnfrozenFromMoving)
+            {
+                timeFreezeBuffer = TimeUnfrozenFromMoving;
+            }
         }
         playerRigidBody.velocity = (xAxisVelocity + yAxisVelocity).normalized * movementSpeed;
         
     }
     public void HandleMovement(Vector2 input)
     {
-        if(timeFreezeBuffer < TimeUnfrozenFromMoving)
-        {
-            timeFreezeBuffer = TimeUnfrozenFromMoving;
-        }
+        
         Debug.Log(playerTransform.forward);
        rightLeftInput = input.x;
         forwardBackInput = input.y;
@@ -82,7 +95,7 @@ public class PlayerController : MonoBehaviour
     }
     public void HandleShoot()
     {
-        Debug.Log("Shooting");
+       // Debug.Log("Shooting");
         timeFreezeBuffer = TimeUnfrozenFromShooting;
         pistol.mouseIsDown = true;
         pistol.Shoot();

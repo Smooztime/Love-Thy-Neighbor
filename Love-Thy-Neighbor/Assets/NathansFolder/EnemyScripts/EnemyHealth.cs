@@ -17,10 +17,10 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health < 0)
+        if (health < 0)
         {
-            Instantiate(partEnemySystem, new Vector3(transform.position.x,transform.position.y + 1,transform.position.z), Quaternion.identity);
-            GameObject.Find("UpgradeMenu").GetComponent<FinaceHandler>().PlayerMoney+=moneyForKill;
+            Instantiate(partEnemySystem, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+            GameObject.Find("UpgradeMenu").GetComponent<FinaceHandler>().PlayerMoney += moneyForKill;
             Destroy(gameObject);
         }
     }
