@@ -34,10 +34,12 @@ public class EnemyAI : MonoBehaviour
         // Set the agent's stopping distance to avoid pushing the player
         agent.stoppingDistance = stoppingDistance;
 
-        // Get the PlayerHealth component from the player target
-        if (playerTarget != null)
+        // Find the player by tag
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
         {
-            playerHealth = playerTarget.GetComponent<PlayerHealth>();
+            playerTarget = playerObject.transform;
+            playerHealth = playerObject.GetComponent<PlayerHealth>();
         }
     }
 
@@ -85,4 +87,16 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
+
+    private void OnDeath()
+    {
+        WaveManager waveManager = FindObjectOfType<WaveManager>();
+        if (waveManager != null)
+        {
+            waveManager.EnemyDefeated(gameObject); // Pass the enemy GameObject to remove from the list
+        }
+
+        Destroy(gameObject);
+    }
+
 }

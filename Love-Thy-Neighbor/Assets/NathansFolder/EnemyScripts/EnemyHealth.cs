@@ -11,22 +11,47 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = FMData.health;    
+        health = FMData.health;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (health < 0)
-        {
-            Instantiate(partEnemySystem, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
-            GameObject.Find("UpgradeMenu").GetComponent<FinaceHandler>().PlayerMoney += moneyForKill;
-            Destroy(gameObject);
-        }
-    }
     public void TakeDamage(float damage)
     {
-        Debug.Log(damage);
+        // Reduce the health by the damage amount
         health -= damage;
+        Debug.Log("Enemy took damage, remaining health: " + health);
+
+        // Check if health is zero or below
+        if (health <= 0)
+        {
+            OnDeath();
+        }
+    }
+
+    private void OnDeath()
+    {
+        // Instantiate particle system for enemy death
+        Instantiate(partEnemySystem, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+
+        // Add money to player for the kill
+        GameObject.Find("UpgradeMenu").GetComponent<FinaceHandler>().PlayerMoney += moneyForKill;
+
+        // Notify WaveManager that this enemy has died
+        WaveManager waveManager = FindObjectOfType<WaveManager>();
+        if (waveManager != null)
+        {
+            waveManager.EnemyDefeated(gameObject);
+        }
+        else
+        {
+            Debug.LogError("WaveManager not found!");
+        }
+
+        // Destroy the enemy game object
+        Destroy(gameObject);
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 }
