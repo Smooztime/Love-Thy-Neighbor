@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     }
     public void HandleMovement(Vector2 input)
     {
-        Debug.Log(playerTransform.forward);
+        //Debug.Log(playerTransform.forward);
        rightLeftInput = input.x;
         forwardBackInput = input.y;
     }
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
     }
     public void HandleShoot()
     {
-        Debug.Log("Shooting");
+        //Debug.Log("Shooting");
         pistol.mouseIsDown = true;
         pistol.Shoot();
         pistol.ShotGunFire();

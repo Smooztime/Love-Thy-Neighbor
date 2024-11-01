@@ -287,6 +287,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c36f03ae013668418c72f4c8e3e5e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTarget: {fileID: 116680882689298347, guid: 5cb00383b35473e42b4af9368db5249a,
+    type: 3}
+  speed: 3.5
+  damage: 10
+  attackRange: 3
+  stoppingDistance: 1.5
+  attackCooldown: 1.5
 --- !u!114 &7830518134166309992
 MonoBehaviour:
   m_ObjectHideFlags: 0
