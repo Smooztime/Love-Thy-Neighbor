@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     private bool canAttack = true;
     [SerializeField] bool isRanged = false;
     [SerializeField] float rangeForBullet;
+    [SerializeField] Animator animator;
     GameObject bulletPrefab;
     private PlayerHealth playerHealth;
     FreezeManager freezeManager;
@@ -49,6 +50,14 @@ public class EnemyAI : MonoBehaviour
         // If the player target is assigned, set the destination to the player's position
         if (playerTarget != null)
         {
+            if(!freezeManager.TimeIsFrozen && canAttack == true)
+            {
+                animator.SetBool("IsRun", true);
+            }
+            else if (freezeManager.TimeIsFrozen && canAttack == true)
+            {
+                animator.SetBool("IsRun", false);
+            }
             agent.SetDestination(playerTarget.position);
             agent.speed = speed * freezeManager.FrozenTime;
             // Check if the enemy is within attack range of the player
@@ -66,16 +75,21 @@ public class EnemyAI : MonoBehaviour
     private IEnumerator ShootPlayer()
     {
         canAttack = false;
+        animator.SetBool("IsShoot", true);
+        yield return new WaitForSeconds(0.8f); 
+        
         Vector3 aimAt = new Vector3(playerTarget.position.x,playerTarget.position.y + .3f,playerTarget.position.z);
         GameObject lastBullet = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y + 2, transform.position.z), Quaternion.identity);
         lastBullet.GetComponent<BulletScript>().targetPosition = (aimAt+ (aimAt - new Vector3(transform.position.x, transform.position.y + 2, transform.position.z)) * rangeForBullet);
         lastBullet.GetComponent<BulletScript>().Damage = (int)damage;
         yield return new WaitForSeconds(attackCooldown);
+        animator.SetBool("IsShoot", false);
         canAttack = true;
     }
     private IEnumerator AttackPlayer()
     {
         canAttack = false;
+        animator.SetBool("IsShoot", true);
         Debug.Log("Attacking player with " + damage + " damage");
 
         // Apply damage to the palyer
@@ -85,6 +99,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         yield return new WaitForSeconds(attackCooldown);
+        animator.SetBool("IsShoot", false);
         canAttack = true;
     }
 
