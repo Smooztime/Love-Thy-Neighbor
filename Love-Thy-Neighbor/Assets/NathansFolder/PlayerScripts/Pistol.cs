@@ -144,7 +144,9 @@ public class Pistol : MonoBehaviour
                 {
                     if (hit.collider.gameObject.tag != "Enemy" && hit.collider.gameObject.tag != "Bullet")
                     {
-                        Instantiate(bulletMark, hit.point, Quaternion.identity);
+                        GameObject hole = Instantiate(bulletMark, hit.point, Quaternion.LookRotation(hit.normal));
+                        Vector3 forwardVector = hole.transform.forward;
+                        hole.transform.Translate(forwardVector * 0.001f, Space.World);
                     }
                     if (hit.collider.gameObject.tag == "Bullet")
                     {
@@ -188,7 +190,9 @@ public class Pistol : MonoBehaviour
                 {
                     if(hit.collider.gameObject.tag != "Enemy" && hit.collider.gameObject.tag != "Bullet")
                     {
-                        Instantiate(bulletMark, hit.point, Quaternion.identity);
+                        GameObject hole = Instantiate(bulletMark, hit.point, Quaternion.LookRotation(hit.normal));
+                        Vector3 forwardVector = hole.transform.forward;
+                        hole.transform.Translate(forwardVector * 0.001f, Space.World);
                     }
                     if(hit.collider.gameObject.tag == "Bullet")
                     {
@@ -233,7 +237,9 @@ public class Pistol : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag != "Enemy" && hit.collider.gameObject.tag != "Bullet")
                 {
-                    Instantiate(bulletMark, hit.point, Quaternion.identity);
+                    GameObject hole = Instantiate(bulletMark, hit.point, Quaternion.LookRotation(hit.normal));
+                    Vector3 forwardVector = hole.transform.forward;
+                    hole.transform.Translate(forwardVector * 0.001f, Space.World);
                 }
                 if (hit.collider.gameObject.tag == "Bullet")
                 {
@@ -276,7 +282,9 @@ public class Pistol : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag != "Enemy" && hit.collider.gameObject.tag != "Bullet")
                 {
-                    Instantiate(bulletMark, hit.point, Quaternion.identity);
+                    GameObject hole = Instantiate(bulletMark, hit.point, Quaternion.LookRotation(hit.normal));
+                    Vector3 forwardVector = hole.transform.forward;
+                    hole.transform.Translate(forwardVector * 0.001f, Space.World);
                 }
                 if (hit.collider.gameObject.tag == "Bullet")
                 {
