@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -26,6 +27,16 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Player is dead");
+            
+            // Disable PlayerController script to stop movement
+            PlayerController playerController = GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.enabled = false;
+            }
+
+            // Load the main menu scene
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
