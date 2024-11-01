@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     float upDownRotation = 0;
     float leftRightRotation = 0;
     float temporaryKickRotation = 0;
+    bool canUpgrade = false;
 
     public bool upgradeMenuOpen = false;
 
@@ -116,8 +117,9 @@ public class PlayerController : MonoBehaviour
     }
     public void HandleUpgradeMenu()
     {
+        
         upgradeMenuOpen = !upgradeMenuOpen;
-        if(upgradeMenuOpen)
+        if(upgradeMenuOpen && canUpgrade)
         {
             upgradeMenuScript.OpenUpgradeWindow();
         }
@@ -152,6 +154,20 @@ public class PlayerController : MonoBehaviour
         {
             freezeManager.TimeIsFrozen = false;
             timeFreezeBuffer -= Time.deltaTime;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "UpgradeCoffin")
+        {
+            canUpgrade = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "UpgradeCoffin")
+        {
+            canUpgrade = false;
         }
     }
 }

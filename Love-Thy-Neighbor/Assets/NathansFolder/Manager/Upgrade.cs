@@ -14,6 +14,7 @@ public class Upgrade : MonoBehaviour
     [SerializeField] FinaceHandler accountant;
     [SerializeField] PlayerController playerController;
     [SerializeField] List<GameObject> buttonList;
+    [SerializeField] DoorHandler doorHandler;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +70,8 @@ public class Upgrade : MonoBehaviour
         }
         accountant.PlayerMoney -= UpgradePrice;
         UpgradePrice += UpgradeIncrement;
+        doorHandler.UpdateDoorText(UpgradePrice);
+        doorHandler.CloseDoor();
         playerController.upgradeMenuOpen = false;
         pistolScript.UpdateAmmoText();
         CloseUpgradeWindow();
@@ -76,7 +79,11 @@ public class Upgrade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+      if(accountant.PlayerMoney > UpgradePrice)
+        {
+            doorHandler.OpenDoor();
+        }
+        
     }
     
     public void UpgradeDamage()
