@@ -40,6 +40,8 @@ public class Pistol : MonoBehaviour
     bool canShoot = true;
     float kickLerp = 1;
 
+    [SerializeField] AudioHandler handler;
+    [SerializeField] EmptyGun emptyGun;
     [SerializeField] GameObject bulletMark;
     [SerializeField] public PistolData pistolData;
     [SerializeField] PlayerController playerController;
@@ -124,12 +126,19 @@ public class Pistol : MonoBehaviour
 
     void AutoShotGun()
     {
-        if(IsShotgun &&IsFullAuto&& canShoot && mouseIsDown && AmmoInGun > 0)
+        if (AmmoInGun <= 0 && IsShotgun && IsFullAuto && canShoot && mouseIsDown)
+        {
+            emptyGun.PlaySound();
+            StartCoroutine(ShotCoolDown());
+            canShoot = false;
+        }
+        if (IsShotgun &&IsFullAuto&& canShoot && mouseIsDown && AmmoInGun > 0)
         {
             
             kickLerp = 1;
             AmmoInGun--;
             UpdateAmmoText();
+            handler.PlaySound();
             Kick += pistolData.PerShotKick / KickPerShotUpgrade;
             Kick = Mathf.Clamp(Kick, 0, maxKick / MaxKickUpgrade);
             for (int i = 0; i <(int) Mathf.Clamp((pistolData.ShotgunPellets + PelletsUpgrade),1,200); i++)
@@ -170,9 +179,15 @@ public class Pistol : MonoBehaviour
     }
     public void ShotGunFire()
     {
+        if (AmmoInGun <= 0 && IsShotgun && canShoot && !IsFullAuto)
+        {
+            emptyGun.PlaySound();
+            StartCoroutine(ShotCoolDown());
+            canShoot = false;
+        }
         if (IsShotgun && canShoot && !IsFullAuto && AmmoInGun > 0)
         {
-       
+            handler.PlaySound();
             kickLerp = 1;
             AmmoInGun--;
             UpdateAmmoText();
@@ -218,9 +233,16 @@ public class Pistol : MonoBehaviour
     }
     public void FullAutoFire()
     {
+        if(AmmoInGun <= 0 && canShoot && mouseIsDown && IsFullAuto && !IsShotgun)
+        {
+
+            emptyGun.PlaySound();
+            StartCoroutine(ShotCoolDown());
+            canShoot = false;
+        }
         if(canShoot && mouseIsDown && IsFullAuto &&  !IsShotgun&& AmmoInGun > 0)
         {
-          
+            handler.PlaySound();
             kickLerp = 1;
             AmmoInGun--;
             UpdateAmmoText();
@@ -263,9 +285,15 @@ public class Pistol : MonoBehaviour
     }
     public void Shoot()
     {
-        if(canShoot &&  !IsFullAuto&&  !IsShotgun && AmmoInGun > 0)
+        if (AmmoInGun <= 0 && canShoot && !IsFullAuto && !IsShotgun)
         {
-      
+            emptyGun.PlaySound();
+            StartCoroutine(ShotCoolDown());
+            canShoot = false;
+        }
+        if (canShoot &&  !IsFullAuto&&  !IsShotgun && AmmoInGun > 0)
+        {
+            handler.PlaySound();
             kickLerp = 1;
             AmmoInGun--;
             UpdateAmmoText();

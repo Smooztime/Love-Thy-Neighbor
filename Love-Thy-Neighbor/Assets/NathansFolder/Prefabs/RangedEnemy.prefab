@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTarget: {fileID: 0}
   speed: 3
-  damage: 15
+  damage: 8
   attackRange: 16
   stoppingDistance: 16
   attackCooldown: 3
