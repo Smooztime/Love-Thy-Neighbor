@@ -291,7 +291,7 @@ MonoBehaviour:
   playerTarget: {fileID: 0}
   speed: 5
   damage: 10
-  attackRange: 2
+  attackRange: 3
   stoppingDistance: 1.5
   attackCooldown: 3
   isRanged: 0

@@ -25,7 +25,6 @@ public class EnemyAI : MonoBehaviour
     {
         freezeManager = GameObject.Find("FreezeManager").GetComponent<FreezeManager>();
         bulletPrefab = freezeManager.bulletPrefab;
-        playerTarget = GameObject.Find("PlayerCapsule").transform;
         // Get the NavMeshAgent component attached to the GameObject
         agent = GetComponent<NavMeshAgent>();
 
@@ -36,7 +35,7 @@ public class EnemyAI : MonoBehaviour
         agent.stoppingDistance = stoppingDistance;
 
         // Find the player by tag
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        GameObject playerObject = GameObject.Find("PlayerCapsule");
         if (playerObject != null)
         {
             playerTarget = playerObject.transform;

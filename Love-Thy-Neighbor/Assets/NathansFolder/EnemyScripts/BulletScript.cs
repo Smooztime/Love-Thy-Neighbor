@@ -8,6 +8,8 @@ public class BulletScript : MonoBehaviour
     [SerializeField] float speed;
     FreezeManager freezeManager;
     public int Damage;
+    float maxDistance = 200;
+    float distanceTraveled = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,11 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed * freezeManager.FrozenTime);
+        distanceTraveled += Time.deltaTime * speed * freezeManager.FrozenTime;
+        if(distanceTraveled > maxDistance)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
